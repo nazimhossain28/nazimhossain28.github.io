@@ -747,14 +747,15 @@ body {
    Contact
    ============================================ */
 .contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-.contact-card {
+.contact-card.icon-only {
   background: var(--white);
-  padding: 28px 24px;
+  padding: 18px 22px;
   border-radius: var(--radius);
   text-align: center;
   text-decoration: none;
@@ -762,32 +763,27 @@ body {
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   border: 1px solid transparent;
+  min-width: 90px;
 }
 
-.contact-card:hover {
+.contact-card.icon-only:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-4px);
   border-color: var(--primary);
 }
 
 .contact-icon {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--primary);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   font-weight: 700;
 }
 
 .contact-card h3 {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-
-.contact-card p {
-  font-size: 0.82rem;
   color: var(--text-light);
-  word-break: break-all;
+  margin: 0;
 }
 
 /* ============================================
@@ -892,7 +888,11 @@ body {
   }
 
   .contact-grid {
-    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .contact-card.icon-only {
+    min-width: 70px;
+    padding: 14px 16px;
   }
 }
 
