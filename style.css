@@ -608,46 +608,67 @@ body {
 /* ============================================
    Skills
    ============================================ */
+.skills-container {
+  background: var(--bg-alt);
+  border: 1px solid rgba(0, 49, 83, 0.1);
+  border-radius: var(--radius);
+  padding: 28px 28px 20px;
+}
+
+.skills-container h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: var(--text);
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
 }
 
 .skill-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  background: var(--white);
-  padding: 20px 24px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
+  text-align: center;
+  gap: 8px;
+  padding: 14px 6px;
+  border-radius: var(--radius-sm);
   transition: var(--transition);
+  cursor: default;
 }
 
 .skill-card:hover {
-  box-shadow: var(--shadow-md);
+  background: rgba(0, 49, 83, 0.06);
+}
+
+.skill-card:hover .skill-icon {
   transform: translateY(-3px);
+  color: var(--primary);
 }
 
 .skill-icon {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
+  color: var(--primary-light);
+  transition: var(--transition);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary);
-  flex-shrink: 0;
 }
 
 .skill-icon i {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
 .skill-card span {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-light);
+  line-height: 1.3;
 }
 
 /* ============================================
@@ -993,8 +1014,8 @@ body {
   }
 
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
 
   .interests-grid {
@@ -1012,6 +1033,11 @@ body {
 }
 
 @media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
   .interests-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
