@@ -139,8 +139,8 @@ function initTimelineProgress() {
       var activeItem = items[activeIndex];
       var markerCenter = activeItem.offsetTop + 13;
       if (activeIndex === totalItems - 1) {
-        // Last item: extend to the full grey line (bottom - 4px)
-        progressBar.style.height = (timelineHeight - 4) + 'px';
+        // Last item: extend to the very bottom of the timeline
+        progressBar.style.height = timelineHeight + 'px';
       } else {
         progressBar.style.height = markerCenter + 'px';
       }
