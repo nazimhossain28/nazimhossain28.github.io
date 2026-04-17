@@ -873,6 +873,12 @@ body {
   font-weight: 700;
 }
 
+.contact-brand-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
 .contact-card h3 {
   font-size: 0.75rem;
   font-weight: 600;
