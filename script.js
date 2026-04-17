@@ -109,16 +109,19 @@ function initTimelineProgress() {
     var timelineTop = timelineRect.top + window.scrollY;
     var timelineHeight = timeline.offsetHeight;
 
-    // How far the user has scrolled through the timeline section
+    // Determine active item based on scroll — each item activates
+    // when its marker scrolls past the viewport middle
     var scrollMiddle = window.scrollY + window.innerHeight * 0.5;
-    var progress = (scrollMiddle - timelineTop) / timelineHeight;
-    progress = Math.max(0, Math.min(1, progress));
+    var activeIndex = -1;
 
-    // Map progress to items
+    items.forEach(function(item, index) {
+      var itemTop = timelineTop + item.offsetTop + 13; // marker center
+      if (scrollMiddle >= itemTop) {
+        activeIndex = index;
+      }
+    });
+
     var totalItems = items.length;
-    var activeIndex = Math.floor(progress * totalItems);
-    if (progress >= 1) activeIndex = totalItems - 1;
-    if (progress <= 0) activeIndex = -1;
 
     items.forEach(function(item, index) {
       item.classList.remove('active', 'passed');
@@ -133,12 +136,12 @@ function initTimelineProgress() {
 
     // Update progress bar height to reach the active marker
     if (activeIndex >= 0) {
+      var activeItem = items[activeIndex];
+      var markerCenter = activeItem.offsetTop + 13;
       if (activeIndex === totalItems - 1) {
-        // Last item: cover the full timeline line
-        progressBar.style.height = timeline.offsetHeight + 'px';
+        // Last item: extend to the full grey line (bottom - 4px)
+        progressBar.style.height = (timelineHeight - 4) + 'px';
       } else {
-        var activeItem = items[activeIndex];
-        var markerCenter = activeItem.offsetTop + 13;
         progressBar.style.height = markerCenter + 'px';
       }
     } else {
