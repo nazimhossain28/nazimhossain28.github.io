@@ -592,6 +592,12 @@ body {
 /* ============================================
    Experience
    ============================================ */
+#experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .experience-card {
   background: var(--card);
   border-radius: var(--radius);
