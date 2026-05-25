@@ -936,18 +936,6 @@ body {
   object-fit: contain;
 }
 
-[data-theme="dark"] .contact-icon:has(.contact-brand-img) {
-  background: #ffffff;
-  border-radius: 50%;
-  width: 1.5em;
-  height: 1.5em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.2em;
-  box-sizing: content-box;
-}
-
 .contact-card h3 {
   font-size: 0.75rem;
   font-weight: 600;
