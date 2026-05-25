@@ -1,0 +1,42 @@
+name: Update JSON-LD
+
+# Runs after any push to main that touches index.html. Regenerates the
+# JSON-LD Person schema from the page content and commits the change back
+# if anything is out of sync. The "github-actions[bot]" actor check
+# prevents the workflow from triggering itself in an infinite loop.
+
+on:
+  push:
+    branches: [main]
+    paths: ['index.html']
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Regenerate JSON-LD
+        run: node scripts/update-jsonld.js
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet index.html; then
+            echo "JSON-LD already in sync, nothing to commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add index.html
+            git commit -m "Auto-sync JSON-LD with portfolio content"
+            git push
+          fi
