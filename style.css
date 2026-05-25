@@ -936,6 +936,12 @@ body {
   object-fit: contain;
 }
 
+.contact-brand-svg {
+  width: 1em;
+  height: 1em;
+  display: block;
+}
+
 .contact-card h3 {
   font-size: 0.75rem;
   font-weight: 600;
