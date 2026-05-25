@@ -939,7 +939,7 @@ body {
 .contact-brand-svg {
   width: 1em;
   height: 1em;
-  display: block;
+  vertical-align: middle;
 }
 
 .contact-card h3 {
