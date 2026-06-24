@@ -161,6 +161,39 @@ body {
   width: 100%;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-contact {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-contact::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: var(--transition);
+}
+
+.nav-contact:hover {
+  color: var(--primary);
+}
+
+.nav-contact:hover::after {
+  width: 100%;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;

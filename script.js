@@ -82,7 +82,7 @@ function initScrollAnimations() {
 // ============================================
 function initActiveNavTracking() {
   const sections = document.querySelectorAll('section[id]');
-  const navAnchors = document.querySelectorAll('.nav-links a');
+  const navAnchors = document.querySelectorAll('.nav-links a, .nav-contact');
 
   window.addEventListener('scroll', () => {
     let current = '';
