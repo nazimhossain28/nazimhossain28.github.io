@@ -94,7 +94,7 @@ body {
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 68px;
 }
 
@@ -131,6 +131,7 @@ body {
   display: flex;
   list-style: none;
   gap: 32px;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -164,6 +165,7 @@ body {
 .nav-right {
   display: flex;
   align-items: center;
+  margin-left: 32px;
 }
 
 .nav-contact {
