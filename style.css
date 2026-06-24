@@ -110,13 +110,21 @@ body {
   gap: 10px;
 }
 
-.nav-photo {
+.nav-initials {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center top;
   border: 2px solid var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 
 .nav-links {
