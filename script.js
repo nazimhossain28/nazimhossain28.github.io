@@ -25,8 +25,19 @@ const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 
+let lastScrollY = window.scrollY;
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
+  const currentY = window.scrollY;
+  navbar.classList.toggle('scrolled', currentY > 20);
+
+  // Slide nav up when scrolling down, reveal when scrolling up.
+  // Always show near the top or while the mobile menu is open.
+  if (currentY > lastScrollY && currentY > 120 && !navLinks.classList.contains('active')) {
+    navbar.classList.add('nav-hidden');
+  } else {
+    navbar.classList.remove('nav-hidden');
+  }
+  lastScrollY = currentY;
 });
 
 navToggle.addEventListener('click', () => {
