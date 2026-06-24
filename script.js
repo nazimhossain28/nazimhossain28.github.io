@@ -105,10 +105,7 @@ function initActiveNavTracking() {
     });
 
     navAnchors.forEach(a => {
-      a.style.color = '';
-      if (a.getAttribute('href') === '#' + current) {
-        a.style.color = 'var(--primary)';
-      }
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
     });
   });
 }

@@ -15,6 +15,7 @@
   --white: #ffffff;
   --card: #ffffff;
   --navbar-bg: rgba(255,255,255,0.92);
+  --navbar-scrolled-bg: #003153;
   --border-soft: rgba(0,0,0,0.06);
   --tint-primary: rgba(0, 49, 83, 0.06);
   --tint-primary-strong: rgba(0, 49, 83, 0.1);
@@ -41,6 +42,7 @@
   --white: #f8fafc;
   --card: #1e293b;
   --navbar-bg: rgba(15, 23, 42, 0.92);
+  --navbar-scrolled-bg: #0a2c49;
   --border-soft: rgba(255,255,255,0.08);
   --tint-primary: rgba(96, 165, 250, 0.1);
   --tint-primary-strong: rgba(96, 165, 250, 0.18);
@@ -78,14 +80,54 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--navbar-bg);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-soft);
+  background: transparent;
+  border-bottom: 1px solid transparent;
   transition: var(--transition);
 }
 
+/* Fill with Prussian Blue once scrolled past the hero */
 .navbar.scrolled {
+  background: var(--navbar-scrolled-bg);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow-sm);
+}
+
+.navbar.scrolled .nav-logo {
+  color: #fff;
+}
+
+.navbar.scrolled .nav-initials {
+  background: #fff;
+  color: var(--navbar-scrolled-bg);
+  border-color: #fff;
+}
+
+.navbar.scrolled .nav-links a,
+.navbar.scrolled .nav-contact {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar.scrolled .nav-links a:hover,
+.navbar.scrolled .nav-contact:hover,
+.navbar.scrolled .nav-links a.active,
+.navbar.scrolled .nav-contact.active {
+  color: #fff;
+}
+
+.navbar.scrolled .nav-links a::after,
+.navbar.scrolled .nav-contact::after {
+  background: #fff;
+}
+
+.navbar.scrolled .theme-toggle {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.navbar.scrolled .theme-toggle:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
 }
 
 /* Slide the navbar up out of view when scrolling down */
@@ -207,6 +249,17 @@ body {
 }
 
 .nav-contact:hover::after {
+  width: 100%;
+}
+
+/* Active section link (highlighted via JS scroll tracking) */
+.nav-links a.active,
+.nav-contact.active {
+  color: var(--primary);
+}
+
+.nav-links a.active::after,
+.nav-contact.active::after {
   width: 100%;
 }
 
