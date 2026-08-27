@@ -1,6 +1,0 @@
-[build]
-  publish = "."
-  command = "echo 'No build needed'"
-
-[build.environment]
-  NODE_VERSION = "18"
