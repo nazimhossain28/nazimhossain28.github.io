@@ -19,7 +19,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const HTML_PATH = path.join(ROOT, 'index.html');
-const SITE_URL = 'https://nazimhossain28.github.io/';
+const SITE_URL = 'https://nazimhossainbipul.com/';
 
 // Known sameAs URLs for institutions that appear in the education timeline.
 // Add a new entry here when joining a new university so the JSON-LD alumniOf
