@@ -59,6 +59,9 @@
 }
 
 html {
+  /* Times New Roman renders small for its point size, so lift the root
+     ~15% and let every rem-based size scale with it. */
+  font-size: 115%;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
