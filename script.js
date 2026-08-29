@@ -68,7 +68,7 @@ document.addEventListener('click', (e) => {
 // ============================================
 function initScrollAnimations() {
   const elements = document.querySelectorAll(
-    '.timeline-item, .experience-card, .skill-card, .research-card, .achievement-card, .contact-card, .about-content, .interest-tags'
+    '.timeline-item, .experience-card, .skill-card, .research-card, .contact-card, .about-content, .interest-tags'
   );
 
   elements.forEach(el => el.classList.add('fade-in'));

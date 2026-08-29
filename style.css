@@ -1033,38 +1033,6 @@ body {
 }
 
 /* ============================================
-   Achievements
-   ============================================ */
-.achievement-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  background: var(--card);
-  padding: 28px 32px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-}
-
-.achievement-icon {
-  font-size: 2rem;
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
-.achievement-card h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 6px;
-}
-
-.achievement-card p {
-  font-size: 0.92rem;
-  color: var(--text-light);
-  text-align: justify;
-}
-
-/* ============================================
    Contact
    ============================================ */
 .contact-grid {
