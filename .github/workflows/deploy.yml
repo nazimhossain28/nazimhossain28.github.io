@@ -17,6 +17,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # Stamp asset links with a content hash so browsers fetch fresh
+      # CSS/JS right after a deploy instead of a cached copy.
+      - name: Cache-bust CSS and JS
+        run: |
+          css=$(sha256sum style.css | cut -c1-10)
+          js=$(sha256sum script.js | cut -c1-10)
+          sed -i "s|href=\"style.css\"|href=\"style.css?v=$css\"|; s|src=\"script.js\"|src=\"script.js?v=$js\"|" index.html
+          grep -q "style.css?v=$css" index.html
+          grep -q "script.js?v=$js" index.html
       - uses: actions/configure-pages@v4
         with:
           enablement: true
