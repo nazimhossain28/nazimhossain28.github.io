@@ -7,7 +7,7 @@
 //   alumniOf                       from #education timeline (higher ed only:
 //                                  entries whose degree mentions B.Sc., M.Sc.,
 //                                  Diploma, or PGD — HSC/SSC are filtered out)
-//   knowsAbout                     from interest cards + research keywords
+//   knowsAbout                     from interest items + research keywords
 //                                  (publications + theses), deduplicated
 //   email, telephone, sameAs       from contact card hrefs
 //   identifier (ORCID)             extracted from the ORCID contact link
@@ -53,7 +53,7 @@ const jobTitle = pickFirst(/id="heroHeadline"[^>]*>([^<]+)</);
 const description = pickFirst(/class="hero-subheadline"[^>]*>([^<]+)</);
 
 // Interests
-const interests = pickAll(/class="interest-card"[\s\S]*?<span>([^<]+)<\/span>/g);
+const interests = pickAll(/class="interest-item"[\s\S]*?<span>([^<]+)<\/span>/g);
 
 // Research keywords (from publications and theses)
 const researchSection = section('research');
