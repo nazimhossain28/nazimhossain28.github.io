@@ -877,22 +877,6 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-.publication-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  border-left: 4px solid var(--accent);
-}
-
-.research-number {
-  font-family: 'Times New Roman', Times, 'Liberation Serif', 'Nimbus Roman', serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  flex-shrink: 0;
-}
-
 .research-body h4 {
   font-size: 1.05rem;
   font-weight: 600;
@@ -925,22 +909,24 @@ body {
   border-left: 4px solid var(--primary);
 }
 
-/* Numbered IEEE-style citation for each publication */
-.publication-card .thesis-keywords {
-  margin-top: 14px;
+/* Numbered reference list for publications and book chapters */
+.citation-list {
+  list-style: decimal;
+  padding-left: 1.6em;
+  margin: 0;
 }
 
-.research-citation {
+.citation-list li {
   font-size: 0.95rem;
   line-height: 1.75;
   color: var(--text);
   text-align: justify;
-  margin: 0;
+  padding-left: 0.3em;
+  margin-bottom: 6px;
 }
 
-.citation-title {
-  font-weight: 700;
-  color: var(--text);
+.citation-list li:last-child {
+  margin-bottom: 0;
 }
 
 .citation-self {
@@ -1238,11 +1224,6 @@ body {
 
   .experience-header {
     flex-direction: column;
-  }
-
-  .publication-card {
-    flex-direction: column;
-    gap: 12px;
   }
 
   .skills-grid {
