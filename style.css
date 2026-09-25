@@ -687,6 +687,13 @@ body {
   color: var(--text-light);
 }
 
+.timeline-status {
+  grid-column: 1 / -1;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
 .timeline-grade {
   font-size: 0.85rem;
   font-weight: 500;
