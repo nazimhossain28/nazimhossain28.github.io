@@ -73,12 +73,12 @@ for (const topic of [...interests, ...keywords]) {
 // alumniOf — only higher education (filter by degree title)
 const eduSection = section('education');
 const alumniOf = [];
-const itemRe = /<div class="timeline-item">[\s\S]*?<\/div>\s*<\/div>/g;
+const itemRe = /<div class="timeline-entry">([\s\S]*?)<\/div>/g;
 let im;
 while ((im = itemRe.exec(eduSection)) !== null) {
-  const item = im[0];
-  const degree = pickFirst(/<h3>([^<]+)</, item);
-  const inst = pickFirst(/class="timeline-institution"[^>]*>([^<]+)</, item);
+  const item = im[1];
+  const degree = pickFirst(/class="timeline-degree">([^<]+)</, item);
+  const inst = pickFirst(/<em>([^<]+)<\/em>/, item);
   const isHigherEd = /B\.Sc\.|M\.Sc\.|Diploma|PGD|Ph\.D\.|MBA|Master/i.test(degree);
   if (inst && isHigherEd && !alumniOf.some((a) => a.name === inst)) {
     const entry = { '@type': 'CollegeOrUniversity', name: inst };
