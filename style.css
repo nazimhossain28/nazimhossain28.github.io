@@ -850,37 +850,12 @@ body {
   border-bottom-color: var(--primary);
 }
 
-.abstract-toggle {
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--tint-primary-strong);
-  padding: 0;
-  font: inherit;
-  color: var(--primary);
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-.abstract-toggle:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-.abstract-content {
-  margin-top: 8px;
-  display: none;
-}
-
-.abstract-content.visible {
-  display: block;
-}
-
-.abstract-content p {
+.citation-summary {
+  margin-top: 4px;
   font-size: 0.9rem;
+  line-height: 1.7;
   color: var(--text-light);
-  line-height: 1.8;
   text-align: justify;
-  margin-bottom: 6px;
 }
 
 /* ============================================
