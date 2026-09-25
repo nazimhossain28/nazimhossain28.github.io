@@ -52,18 +52,6 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 // ============================================
-// Abstract toggle (event delegation, no inline JS)
-// ============================================
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('[data-action="toggle-abstract"]');
-  if (!btn) return;
-  const content = btn.nextElementSibling;
-  const isVisible = content.classList.contains('visible');
-  content.classList.toggle('visible');
-  btn.textContent = isVisible ? 'Show Abstract' : 'Hide Abstract';
-});
-
-// ============================================
 // Scroll animations
 // ============================================
 function initScrollAnimations() {
