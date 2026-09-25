@@ -9,7 +9,7 @@
 //                                  Diploma, or PGD — HSC/SSC are filtered out)
 //   knowsAbout                     from interest items + research keywords
 //                                  (publications + theses), deduplicated
-//   email, telephone, sameAs       from contact card hrefs
+//   email, telephone, sameAs       from contact link hrefs
 //   identifier (ORCID)             extracted from the ORCID contact link
 //
 // Stable fields (image URL, alternateName, nationality) are constants below.
@@ -89,7 +89,7 @@ while ((im = itemRe.exec(eduSection)) !== null) {
 
 // Contact links
 const contactSection = section('contact');
-const hrefRe = /<a\s+href="([^"]+)"[^>]*class="contact-card[^"]*"/g;
+const hrefRe = /<a\s+href="([^"]+)"[^>]*class="contact-item[^"]*"/g;
 const hrefs = pickAll(hrefRe, contactSection);
 
 let email = '';

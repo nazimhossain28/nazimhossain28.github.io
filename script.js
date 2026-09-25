@@ -56,7 +56,7 @@ navLinks.querySelectorAll('a').forEach(link => {
 // ============================================
 function initScrollAnimations() {
   const elements = document.querySelectorAll(
-    '.timeline-item, .skill-item, .contact-card, .about-content'
+    '.timeline-item, .skill-item, .contact-item, .about-content'
   );
 
   elements.forEach(el => el.classList.add('fade-in'));
