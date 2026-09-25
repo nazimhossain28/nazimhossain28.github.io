@@ -373,14 +373,6 @@ body {
   text-align: justify;
 }
 
-.hero-bio {
-  font-size: 1.05rem;
-  color: var(--text-light);
-  max-width: 520px;
-  margin-bottom: 32px;
-  line-height: 1.8;
-}
-
 .hero-actions {
   display: flex;
   gap: 16px;
@@ -836,20 +828,6 @@ body {
   border-bottom-color: var(--accent);
 }
 
-.read-here {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-  white-space: nowrap;
-  border-bottom: 1px solid var(--accent);
-  transition: var(--transition);
-}
-
-.read-here:hover {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
-}
-
 .citation-summary {
   margin-top: 4px;
   font-size: 0.9rem;
@@ -899,12 +877,6 @@ body {
   object-fit: contain;
 }
 
-.contact-brand-svg {
-  width: 1em;
-  height: 1em;
-  vertical-align: middle;
-}
-
 .contact-card h3 {
   font-size: 0.75rem;
   font-weight: 600;
@@ -948,7 +920,6 @@ body {
    Brand Colors
    ============================================ */
 /* Skills */
-.brand-microsoft { color: #D83B01; }
 .brand-origin { color: #0C4DA2; }
 .brand-minitab { color: #00843D; }
 .brand-spss { color: #CC0000; }
@@ -968,7 +939,6 @@ body {
 .color-process { color: #546E7A; }
 
 /* Contact */
-.brand-gmail { color: #EA4335; }
 .brand-phone { color: #25D366; }
 .brand-linkedin { color: #0A66C2; }
 .brand-orcid { color: #A6CE39; }
@@ -1030,11 +1000,6 @@ body {
     flex-direction: column-reverse;
     text-align: center;
     gap: 40px;
-  }
-
-  .hero-bio {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .hero-actions {
