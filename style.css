@@ -717,7 +717,18 @@ body {
   border-bottom: 2px solid var(--tint-primary-strong);
 }
 
-/* Numbered reference lists (education, experience, research) */
+/* Experience entries share the education line layout */
+.experience-item + .experience-item {
+  margin-top: 24px;
+}
+
+.experience-item .citation-details li {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/* Numbered reference lists (research) */
 .citation-list {
   list-style: decimal;
   padding-left: 1.6em;
