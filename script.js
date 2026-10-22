@@ -115,8 +115,11 @@ function initBackToTop() {
 // Timeline scroll progress
 // ============================================
 function initTimelineProgress() {
-  const timeline = document.getElementById('educationTimeline');
-  const progressBar = document.getElementById('timelineProgress');
+  document.querySelectorAll('.timeline').forEach(initTimeline);
+}
+
+function initTimeline(timeline) {
+  const progressBar = timeline.querySelector('.timeline-progress');
   const items = timeline.querySelectorAll('.timeline-item');
   if (!items.length) return;
 

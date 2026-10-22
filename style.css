@@ -717,11 +717,7 @@ body {
   border-bottom: 2px solid var(--tint-primary-strong);
 }
 
-/* Experience entries share the education line layout */
-.experience-item + .experience-item {
-  margin-top: 24px;
-}
-
+/* Experience entries share the education timeline layout */
 .experience-item .citation-details li {
   font-size: 0.95rem;
   line-height: 1.75;
